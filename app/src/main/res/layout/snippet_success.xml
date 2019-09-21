@@ -1,0 +1,74 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:id="@+id/successView"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/titleTxt"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_6"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/distanceTxt"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_8"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="@dimen/margin_4"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/durationTxt"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/distanceTxt"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="@dimen/margin_4"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/startAd"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/durationTxt"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="@dimen/margin_4"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack" />
+
+        <TextView
+            android:id="@+id/stopAd"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/startAd"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="@dimen/margin_4"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack" />
+    </RelativeLayout>
+</merge>
