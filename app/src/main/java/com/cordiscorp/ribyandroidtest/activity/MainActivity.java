@@ -26,6 +26,9 @@ import androidx.core.content.ContextCompat;
 import com.cordiscorp.ribyandroidtest.R;
 import com.cordiscorp.ribyandroidtest.connectivity.models.UserLocation;
 import com.cordiscorp.ribyandroidtest.contract.FetchDistanceContract;
+import com.cordiscorp.ribyandroidtest.database.LocationDAO;
+import com.cordiscorp.ribyandroidtest.database.LocationDB;
+import com.cordiscorp.ribyandroidtest.database.UserLocationModel;
 import com.cordiscorp.ribyandroidtest.presenter.FetchDistancePresenter;
 import com.directions.route.AbstractRouting;
 import com.directions.route.Route;
@@ -48,6 +51,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 import butterknife.BindColor;
 import butterknife.BindString;
@@ -125,6 +129,13 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         airLocation = new AirLocation(this, true, true, new AirLocation.Callbacks() {
             @Override
             public void onSuccess(Location location) {
+                LocationDB locationDB = LocationDB.getAppDatabase(getApplicationContext());
+                UserLocationModel userLocationModel =  new UserLocationModel();
+                userLocationModel.setLat(location.getLatitude());
+                userLocationModel.setLng(location.getLongitude());
+                LocationDAO dao = locationDB.userLocationDao();
+                Executors.newSingleThreadExecutor().execute(() -> dao.insert(userLocationModel));
+
                 displayUserLocation(location);
                 switch (STATE) {
                     case 0:
@@ -190,7 +201,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 .build();
         routing.execute();
     }
-
 
     @Override
     public void onFetchDIstanceFailed(Throwable throwable) {
