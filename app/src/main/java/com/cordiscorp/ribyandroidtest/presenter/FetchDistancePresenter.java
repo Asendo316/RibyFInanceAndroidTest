@@ -34,7 +34,7 @@ public class FetchDistancePresenter implements FetchDistanceContract.Presenter,
         fetchView.showGetDistanceResults(
                 convertDistanceToKm(
                         legList.get(0).getDistance().getValue()) +" km",
-                        legList.get(0).getDuration().toString(),
+                        String.valueOf(legList.get(0).getDuration().getText()),
                         legList.get(0).getStartAddress(),
                         legList.get(0).getEndAddress());
 

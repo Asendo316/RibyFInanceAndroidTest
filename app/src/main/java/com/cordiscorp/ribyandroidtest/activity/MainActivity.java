@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         titleTxt.setText(header);
         erTitle.setText(header);
         distanceTxt.setText("Distance:\n"+distance);
-        durationTxt.setText("Duration:\n"+String.valueOf(duration)+" mins");
+        durationTxt.setText("Duration:\n"+duration);
         startAd.setText("Start Location:\n"+start);
         stopAd.setText("Stop Location:\n"+end);
         erBody.setText(error);
