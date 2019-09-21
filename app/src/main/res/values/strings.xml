@@ -2,7 +2,7 @@
     <string name="app_name">Riby Test</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
-    <string name="maps_key">AIzaSyDVcWV1tiKEjneJvuELgHCpyepcyqRRla0</string>
+    <string name="maps_key">MAP KEY HERE</string>
     <string name="title_activity_maps">Map</string>
     <string name="dismiss">Dismiss</string>
 
